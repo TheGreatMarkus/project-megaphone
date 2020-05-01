@@ -1,0 +1,91 @@
+$primary-color: #303f9f;
+$primary-color-light: #666ad1;
+$primary-color-dark: #001970;
+
+$accent-color: #4dd0e1;
+$accent-color-light: #88ffff;
+$accent-color-dark: #009faf;
+
+$background-color: #252525;
+$foreground-color: #f0f0f0;
+
+$responsive-width: 800px;
+
+.normal-text {
+  @media screen {
+    font-size: 16px;
+  }
+  @media (max-width: $responsive-width) {
+    font-size: 12px;
+  }
+}
+
+.large-text {
+  @media screen {
+    font-size: 24px;
+  }
+  @media (max-width: $responsive-width) {
+    font-size: 18px;
+  }
+}
+
+.larger-text {
+  @media screen {
+    font-size: 32px;
+  }
+  @media (max-width: $responsive-width) {
+    font-size: 24px;
+  }
+}
+
+.largest-text {
+  @media screen {
+    font-size: 48px;
+  }
+  @media (max-width: $responsive-width) {
+    font-size: 36px;
+  }
+}
+
+.bg-darkest {
+  background: rgba($color: $background-color, $alpha: 0.7);
+}
+
+.bg-darker {
+  background-color: rgba(
+    $color: lighten($color: $background-color, $amount: 10%),
+    $alpha: 0.7
+  );
+}
+
+.bg-dark {
+  background-color: rgba(
+    $color: lighten($color: $background-color, $amount: 25%),
+    $alpha: 0.7
+  );
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button {
+  @extend .noselect;
+  cursor: pointer;
+  transition: filter ease 0.1s;
+}
+
+.button:hover {
+  filter: brightness(120%);
+}
+
+.button:active {
+  filter: brightness(90%);
+
+  color: $accent-color-dark;
+}

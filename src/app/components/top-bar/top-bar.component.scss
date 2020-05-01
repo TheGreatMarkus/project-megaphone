@@ -1,0 +1,37 @@
+@import "../../../common.scss";
+
+.horizontal-bar {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  @media screen {
+    flex-direction: row;
+    width: 100%;
+    padding: 1em 0;
+  }
+  @media (max-width: $responsive-width) {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+
+  justify-content: space-around;
+}
+
+.top-bar-button {
+  @extend .larger-text;
+  @extend .bg-darker;
+  @extend .button;
+
+  @media screen {
+    width: 23%;
+  }
+  @media (max-width: $responsive-width) {
+    box-sizing: border-box;
+    width: 95%;
+    margin: 5px 0;
+  }
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px 0px;
+}

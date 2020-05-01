@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import "common.scss";
+
+@font-face {
+  font-family: sharetech;
+  src: url(assets/fonts/ShareTechMono-Regular.ttf) format("opentype");
+}
+
+* {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  font-family: sharetech;
+  color: $foreground-color;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: black;
+}
+
+::selection {
+  background-color: $accent-color-dark;
+}
