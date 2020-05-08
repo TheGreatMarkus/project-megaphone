@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'My Website';
-
   text = '';
+  showCursor = true;
 
   ngAfterContentInit() {
     const phrases = [
@@ -16,10 +15,25 @@ export class AppComponent {
       'Stick around to learn more about me.',
       'Take care of yourself now. :)',
     ];
+
+    const cursorBlinkTime = 400;
+    const cursorCheckTime = cursorBlinkTime / 2;
+
     let charIndex = 0;
     let deleting = false;
     let phraseIndex = 0;
     let repeat = true;
+    let cursorTimer = cursorBlinkTime;
+
+    const updateCursor = () => {
+      cursorTimer -= cursorCheckTime;
+      console.log(this.showCursor);
+      if (cursorTimer <= 0) {
+        this.showCursor = !this.showCursor;
+        cursorTimer = cursorBlinkTime;
+      }
+      setTimeout(() => updateCursor(), cursorCheckTime);
+    };
 
     const updateText = () => {
       let wait = 25 + 75 * Math.random();
@@ -32,6 +46,8 @@ export class AppComponent {
           wait += 500;
         } else {
           charIndex--;
+          cursorTimer = cursorBlinkTime;
+          this.showCursor = true;
         }
       } else {
         this.text += phrases[phraseIndex][charIndex];
@@ -43,6 +59,8 @@ export class AppComponent {
           }
         } else {
           charIndex++;
+          cursorTimer = cursorBlinkTime;
+          this.showCursor = true;
         }
       }
 
@@ -50,6 +68,8 @@ export class AppComponent {
         setTimeout(() => updateText(), wait);
       }
     };
+
+    updateCursor();
     updateText();
   }
 }

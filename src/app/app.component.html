@@ -5,7 +5,9 @@
   <app-top-bar></app-top-bar>
 
   <div id="intro">
-    <div id="intro-text">{{ text }}<span id="cursor">|</span></div>
+    <div id="intro-text">
+      {{ text }}<span id="cursor" *ngIf="showCursor">|</span>
+    </div>
   </div>
   <router-outlet></router-outlet>
 </div>
