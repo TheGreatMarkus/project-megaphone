@@ -6,7 +6,7 @@
 }
 
 * {
-  font-size: 16px;
+  @extend .normal-text;
   font-weight: normal;
   padding: 0;
   margin: 0;
@@ -19,6 +19,11 @@ body {
   margin: 0;
   height: 100%;
   background-color: black;
+
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 ::selection {

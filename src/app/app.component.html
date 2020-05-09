@@ -1,11 +1,38 @@
-<div id="image-background"></div>
+<div id="background-image"></div>
 
 <div id="main-content">
-  <div id="name">Cristian Aldea</div>
-  <app-top-bar></app-top-bar>
-
-  <div id="intro">
-    <div id="intro-text">{{ text }}<span id="cursor">|</span></div>
+  <div class="fade-in">
+    <div id="name">Cristian Aldea</div>
+    <app-top-bar></app-top-bar>
   </div>
-  <router-outlet></router-outlet>
+
+  <app-typing-message></app-typing-message>
+
+  <!-- TODO: Temporary replacement for router outlet. To be deleted -->
+  <!-- <router-outlet></router-outlet> -->
+  <div class="fade-in">
+    <ng-container *ngIf="pageRouter.aboutPageActive()">
+      <div id="text-content">
+        <app-about-page></app-about-page>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="pageRouter.projectPageActive()">
+      <div id="text-content">
+        <app-projects-page></app-projects-page>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="pageRouter.experiencePageActive()">
+      <div id="text-content">
+        <app-experience-page></app-experience-page>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="pageRouter.contactPageActive()">
+      <div id="text-content">
+        <app-contact-page></app-contact-page>
+      </div>
+    </ng-container>
+  </div>
 </div>

@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROUTE_NAMES } from '../../app-routing.module';
+import { PageRouterService, Page } from 'src/app/services/page-router.service';
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
 })
-export class TopBarComponent implements OnInit {
-  routeNames = ROUTE_NAMES;
+export class TopBarComponent {
+  pages = Page;
 
-  constructor(private router: Router) {}
+  constructor(public pageRouter: PageRouterService) {}
 
-  ngOnInit(): void {}
-
-  navigatePage(route: string) {
-    this.router.navigate([route]);
+  navigatePage(page: Page) {
+    this.pageRouter.activePage = page;
   }
 }

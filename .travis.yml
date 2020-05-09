@@ -12,6 +12,7 @@ install:
 script:
   - npm i
   - ng build --prod
+  - echo "cristianaldea.online" > dist/project-megaphone/CNAME
 
 deploy:
   provider: pages
