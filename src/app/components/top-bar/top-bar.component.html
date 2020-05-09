@@ -1,17 +1,33 @@
 <div class="horizontal-bar">
-  <div (click)="navigatePage(pages.ABOUT)" class="top-bar-button">
+  <div
+    (click)="navigatePage(pages.ABOUT)"
+    class="top-bar-button"
+    [class]="pageRouter.aboutPageActive() ? 'bg-dark' : 'bg-darker'"
+  >
     About Me
   </div>
 
-  <div (click)="navigatePage(pages.PROJECT)" class="top-bar-button">
+  <div
+    (click)="navigatePage(pages.PROJECT)"
+    class="top-bar-button"
+    [class]="pageRouter.projectPageActive() ? 'bg-dark' : 'bg-darker'"
+  >
     Projects
   </div>
 
-  <div (click)="navigatePage(pages.EXPERIENCE)" class="top-bar-button">
+  <div
+    (click)="navigatePage(pages.EXPERIENCE)"
+    class="top-bar-button"
+    [class]="pageRouter.experiencePageActive() ? 'bg-dark' : 'bg-darker'"
+  >
     Experience
   </div>
 
-  <div (click)="navigatePage(pages.CONTACT)" class="top-bar-button">
+  <div
+    (click)="navigatePage(pages.CONTACT)"
+    class="top-bar-button"
+    [class]="pageRouter.contactPageActive() ? 'bg-dark' : 'bg-darker'"
+  >
     Contact
   </div>
 </div>
