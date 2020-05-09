@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-typing-message',
   templateUrl: './typing-message.component.html',
   styleUrls: ['./typing-message.component.scss'],
 })
-export class TypingMessageComponent {
+export class TypingMessageComponent implements AfterContentInit {
   constructor() {}
 
   text = '';
@@ -14,53 +14,60 @@ export class TypingMessageComponent {
   ngAfterContentInit() {
     const phrases = [
       'Welcome to my website!',
-      'Stick around to learn more about me.',
+      'Press one of the buttons to learn more about me!',
       'Take care of yourself now. :)',
     ];
-
-    const cursorBlinkTime = 400;
-    const cursorCheckTime = cursorBlinkTime / 2;
+    const blinkTime = 400;
 
     let charIndex = 0;
     let deleting = false;
     let phraseIndex = 0;
     let repeat = true;
-    let cursorTimer = cursorBlinkTime;
+    let typing = true;
 
     const updateCursor = () => {
-      cursorTimer -= cursorCheckTime;
-      if (cursorTimer <= 0) {
+      if (typing) {
+        this.showCursor = true;
+      } else {
         this.showCursor = !this.showCursor;
-        cursorTimer = cursorBlinkTime;
       }
-      setTimeout(() => updateCursor(), cursorCheckTime);
+      setTimeout(() => updateCursor(), blinkTime);
     };
 
     const updateText = () => {
-      let wait = 25 + 75 * Math.random();
+      let wait = 20 + 60 * Math.random();
+      typing = true;
 
       if (deleting) {
+        // Remove last char
         this.text = this.text.substring(0, this.text.length - 1);
+
+        // Phrase deleted
         if (charIndex === 0) {
           deleting = !deleting;
           phraseIndex++;
-          wait += 500;
+          wait += 300;
+          typing = false;
         } else {
           charIndex--;
-          cursorTimer = cursorBlinkTime;
           this.showCursor = true;
         }
       } else {
+        // Add char at the end
         this.text += phrases[phraseIndex][charIndex];
+
+        // Phrase typed out completely
         if (charIndex === phrases[phraseIndex].length - 1) {
           deleting = !deleting;
           wait += 1500;
-          if (phraseIndex == phrases.length - 1) {
+          typing = false;
+
+          // If the last phrase was typed completely, stop
+          if (phraseIndex === phrases.length - 1) {
             repeat = false;
           }
         } else {
           charIndex++;
-          cursorTimer = cursorBlinkTime;
           this.showCursor = true;
         }
       }

@@ -5,8 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './experience-page.component.html',
   styleUrls: ['./experience-page.component.scss'],
 })
-export class ExperiencePageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class ExperiencePageComponent {}
