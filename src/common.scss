@@ -74,6 +74,10 @@ $responsive-width: 800px;
   user-select: none;
 }
 
+.card {
+  border-radius: 10px;
+}
+
 .button {
   @extend .noselect;
   cursor: pointer;
@@ -88,4 +92,24 @@ $responsive-width: 800px;
   filter: brightness(90%);
 
   color: $accent-color-dark;
+}
+
+.section-content-card {
+  @extend .bg-darker;
+  @extend .card;
+
+  display: block;
+  position: relative;
+  animation: floatBubble 0.2s normal ease-out;
+}
+
+@keyframes floatBubble {
+  0% {
+    top: 10px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
 }

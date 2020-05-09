@@ -1,8 +1,14 @@
+<div id="background-image"></div>
+
 <div id="main-content">
-  <div id="name">Cristian Aldea</div>
-  <app-top-bar></app-top-bar>
+  <div class="fade-in">
+    <div id="name">Cristian Aldea</div>
+    <app-top-bar></app-top-bar>
+  </div>
 
   <app-typing-message></app-typing-message>
 
-  <router-outlet></router-outlet>
+  <div class="fade-in" id="text-content">
+    <router-outlet></router-outlet>
+  </div>
 </div>

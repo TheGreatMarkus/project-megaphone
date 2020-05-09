@@ -29,7 +29,6 @@ export class TypingMessageComponent {
 
     const updateCursor = () => {
       cursorTimer -= cursorCheckTime;
-      console.log(this.showCursor);
       if (cursorTimer <= 0) {
         this.showCursor = !this.showCursor;
         cursorTimer = cursorBlinkTime;

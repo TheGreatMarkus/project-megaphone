@@ -2,8 +2,15 @@
 
 #name {
   @extend .largest-text;
+  @extend .bg-darker;
   text-align: center;
-  padding-top: 0.5em;
+  width: 100%;
+  border-radius: 10px;
+  width: 100%;
+  align-self: center;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px 0;
 }
 
 :host {
@@ -12,16 +19,40 @@
   height: 100%;
 }
 
-#main-content {
+#background-image {
+  @extend .fade-in;
+  position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 2;
-  display: block;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../assets/keyboard.jpg);
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url(../assets/keyboard.jpg);
+  background-color: rgba(40, 40, 40, 1);
   background-size: 100% 100%;
-  animation: fadeIn 1s;
+}
+
+#main-content {
+  right: 10px;
+  left: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  z-index: 2;
+  position: absolute;
+}
+
+#text-content {
+  flex: 1;
+}
+
+.fade-in {
+  animation: fadeInDelayed 3.5s;
 }
 
 @keyframes fadeIn {
@@ -29,6 +60,18 @@
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
