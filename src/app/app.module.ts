@@ -8,6 +8,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { ExperiencePageComponent } from './components/experience-page/experience-page.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
+import { TypingMessageComponent } from './components/typing-message/typing-message.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProjectsPageComponent } from './components/projects-page/projects-page.
     ProjectsPageComponent,
     ExperiencePageComponent,
     ContactPageComponent,
+    TypingMessageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
