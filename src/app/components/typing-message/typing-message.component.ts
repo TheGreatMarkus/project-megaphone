@@ -31,7 +31,11 @@ export class TypingMessageComponent implements AfterContentInit {
       } else {
         this.showCursor = !this.showCursor;
       }
-      setTimeout(() => updateCursor(), blinkTime);
+      if (repeat) {
+        setTimeout(() => updateCursor(), blinkTime);
+      } else {
+        this.showCursor = false;
+      }
     };
 
     const updateText = () => {

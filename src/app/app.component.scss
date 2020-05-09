@@ -33,7 +33,9 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../assets/keyboard.jpg);
   background-color: rgba(40, 40, 40, 1);
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #main-content {
