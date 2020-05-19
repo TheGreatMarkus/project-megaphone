@@ -14,6 +14,12 @@
   color: $foreground-color;
 }
 
+a {
+  font-weight: inherit;
+  font-size: inherit;
+  color: $accent-color;
+}
+
 html,
 body {
   margin: 0;
