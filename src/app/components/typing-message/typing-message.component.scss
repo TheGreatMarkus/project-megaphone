@@ -1,19 +1,17 @@
 @import "../../../common.scss";
 
 #intro-text {
-  @extend .larger-text;
+  @extend .large-text;
   width: 100%;
   height: fit-content;
-  min-height: 2em;
-  margin: 0.5em 0;
-  padding: 0 2em;
+  padding: 0.5em 1em;
   box-sizing: border-box;
   text-align: left;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 
-#cursor {
-  @extend .larger-text;
+.decoration-text {
+  @extend .large-text;
   color: $accent-color;
 }

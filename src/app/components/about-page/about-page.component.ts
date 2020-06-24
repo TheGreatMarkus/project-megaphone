@@ -4,6 +4,5 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-about-page',
   templateUrl: './about-page.component.html',
   styleUrls: ['./about-page.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class AboutPageComponent {}

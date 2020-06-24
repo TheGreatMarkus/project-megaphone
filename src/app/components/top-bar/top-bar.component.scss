@@ -5,7 +5,7 @@
     flex-direction: row;
     margin: 1em 0;
   }
-  @media (max-width: $responsive-width) {
+  @media (max-width: $small-width) {
     flex-direction: column;
     height: fit-content;
   }
@@ -24,7 +24,7 @@
   @media screen {
     flex-basis: 23%;
   }
-  @media (max-width: $responsive-width) {
+  @media (max-width: $small-width) {
     width: 100%;
     margin: 5px 0;
   }

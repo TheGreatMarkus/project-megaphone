@@ -1,38 +1,38 @@
 <div id="background-image"></div>
 
+<div id="message">
+  <app-typing-message></app-typing-message>
+</div>
+
 <div id="main-content">
   <div class="fade-in">
     <div id="name">Cristian Aldea</div>
     <app-top-bar></app-top-bar>
-  </div>
 
-  <app-typing-message></app-typing-message>
+    <!-- TODO: Temporary replacement for router outlet. To be deleted -->
+    <!-- <router-outlet></router-outlet> -->
 
-  <!-- TODO: Temporary replacement for router outlet. To be deleted -->
-  <!-- <router-outlet></router-outlet> -->
-  <div class="fade-in">
-    <ng-container *ngIf="pageRouter.aboutPageActive()">
-      <div id="text-content">
-        <app-about-page></app-about-page>
-      </div>
-    </ng-container>
+    <ng-container
+      *ngIf="
+        pageRouter.aboutPageActive() ||
+        pageRouter.projectPageActive() ||
+        pageRouter.experiencePageActive() ||
+        pageRouter.contactPageActive()
+      "
+    >
+      <app-about-page *ngIf="pageRouter.aboutPageActive()"></app-about-page>
 
-    <ng-container *ngIf="pageRouter.projectPageActive()">
-      <div id="text-content">
-        <app-projects-page></app-projects-page>
-      </div>
-    </ng-container>
+      <app-projects-page
+        *ngIf="pageRouter.projectPageActive()"
+      ></app-projects-page>
 
-    <ng-container *ngIf="pageRouter.experiencePageActive()">
-      <div id="text-content">
-        <app-experience-page></app-experience-page>
-      </div>
-    </ng-container>
+      <app-experience-page
+        *ngIf="pageRouter.experiencePageActive()"
+      ></app-experience-page>
 
-    <ng-container *ngIf="pageRouter.contactPageActive()">
-      <div id="text-content">
-        <app-contact-page></app-contact-page>
-      </div>
+      <app-contact-page
+        *ngIf="pageRouter.contactPageActive()"
+      ></app-contact-page>
     </ng-container>
   </div>
 </div>
