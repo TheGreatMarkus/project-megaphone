@@ -14,7 +14,7 @@ export class TypingMessageComponent implements AfterContentInit {
   ngAfterContentInit() {
     const phrases = [
       'Welcome to my website!',
-      'Press one of the buttons to learn more about me!',
+      "I hope you're doing okay in these hard times.",
       'Take care of yourself now. :)',
     ];
     const blinkTime = 400;

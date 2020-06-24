@@ -9,14 +9,18 @@ $accent-color-dark: #009faf;
 $background-color: #252525;
 $foreground-color: #f0f0f0;
 
-$responsive-width: 800px;
+$small-width: 800px;
+$smaller-width: 400px;
 
 .normal-text {
   @media screen {
     font-size: 18px;
   }
-  @media (max-width: $responsive-width) {
+  @media (max-width: $small-width) {
     font-size: 12px;
+  }
+  @media (max-width: $smaller-width) {
+    font-size: 9px;
   }
 }
 
@@ -24,8 +28,11 @@ $responsive-width: 800px;
   @media screen {
     font-size: 24px;
   }
-  @media (max-width: $responsive-width) {
+  @media (max-width: $small-width) {
     font-size: 16px;
+  }
+  @media (max-width: $smaller-width) {
+    font-size: 12px;
   }
 }
 
@@ -33,8 +40,11 @@ $responsive-width: 800px;
   @media screen {
     font-size: 36px;
   }
-  @media (max-width: $responsive-width) {
+  @media (max-width: $small-width) {
     font-size: 24px;
+  }
+  @media (max-width: $smaller-width) {
+    font-size: 18px;
   }
 }
 
@@ -42,8 +52,11 @@ $responsive-width: 800px;
   @media screen {
     font-size: 60px;
   }
-  @media (max-width: $responsive-width) {
+  @media (max-width: $small-width) {
     font-size: 40px;
+  }
+  @media (max-width: $smaller-width) {
+    font-size: 30px;
   }
 }
 
@@ -78,6 +91,10 @@ $responsive-width: 800px;
   border-radius: 10px;
 }
 
+.full-height {
+  height: 100%;
+}
+
 .button {
   @extend .noselect;
   cursor: pointer;
@@ -99,7 +116,9 @@ $responsive-width: 800px;
   @extend .card;
 
   display: block;
+  padding: 10px;
   position: relative;
+  flex: 1;
   animation: floatBubble 0.2s normal ease-out;
 }
 
@@ -112,4 +131,20 @@ $responsive-width: 800px;
     top: 0px;
     opacity: 1;
   }
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin-bottom: 1em;
+}
+
+h1 {
+  @extend .large-text;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: bold;
 }
