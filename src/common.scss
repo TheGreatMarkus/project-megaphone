@@ -12,6 +12,7 @@ $foreground-color: #f0f0f0;
 $small-width: 800px;
 $smaller-width: 400px;
 
+// Text sizes
 .normal-text {
   @media screen {
     font-size: 18px;
@@ -60,6 +61,7 @@ $smaller-width: 400px;
   }
 }
 
+// Background colors
 .bg-darkest {
   background: rgba($color: $background-color, $alpha: 0.7);
 }
@@ -78,6 +80,7 @@ $smaller-width: 400px;
   );
 }
 
+// To disable the selection of text
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -131,20 +134,4 @@ $smaller-width: 400px;
     top: 0px;
     opacity: 1;
   }
-}
-
-p,
-h1,
-h2,
-h3 {
-  margin-bottom: 1em;
-}
-
-h1 {
-  @extend .large-text;
-  font-weight: bold;
-}
-
-h2 {
-  font-weight: bold;
 }
