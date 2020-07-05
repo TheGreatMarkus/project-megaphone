@@ -101,7 +101,7 @@ $smaller-width: 400px;
 .button {
   @extend .noselect;
   cursor: pointer;
-  transition: filter ease 0.1s;
+  transition: filter ease 0.3s;
 }
 
 .button:hover {
@@ -122,7 +122,7 @@ $smaller-width: 400px;
   padding: 10px;
   position: relative;
   flex: 1;
-  animation: floatBubble 0.2s normal ease-out;
+  animation: floatBubble 0.3s normal ease-out;
 }
 
 @keyframes floatBubble {
