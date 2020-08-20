@@ -1,5 +1,21 @@
 @import "../../../common.scss";
+@import "../../../social-media.scss";
 
 :host {
   @extend .section-content-card;
+}
+
+a {
+  display: block;
+  align-content: center;
+  text-decoration-line: none;
+  width: fit-content;
+}
+
+a > * {
+  vertical-align: middle;
+}
+
+span {
+  @extend .larger-text;
 }

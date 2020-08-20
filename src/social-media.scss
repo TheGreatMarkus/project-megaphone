@@ -1,0 +1,28 @@
+@import "common.scss";
+
+$linkedin-color: #007bb5;
+$github-color: #101010;
+$email-color: #737373;
+
+.icon {
+  @extend .button;
+  font-size: 3em;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-linkedin {
+  @extend .icon;
+  color: $linkedin-color;
+}
+
+.fa-github {
+  @extend .icon;
+  color: $github-color;
+}
+
+.fa-envelope {
+  @extend .icon;
+  color: $email-color;
+}

@@ -35,3 +35,19 @@ body {
 ::selection {
   background-color: $accent-color-dark;
 }
+
+p,
+h1,
+h2,
+h3 {
+  margin-bottom: 1em;
+}
+
+h1 {
+  @extend .large-text;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: bold;
+}
