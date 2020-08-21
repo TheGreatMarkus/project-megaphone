@@ -1,19 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROUTE_NAMES } from '../../app-routing.module';
-import { PageRouterService, Page } from 'src/app/services/page-router.service';
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
 })
-export class TopBarComponent {
-  pages = Page;
+export class TopBarComponent implements OnInit {
+  routes = ROUTE_NAMES;
+  currentRoute = '';
 
-  constructor(public pageRouter: PageRouterService) {}
+  constructor(private router: Router) {}
 
-  navigatePage(page: Page) {
-    this.pageRouter.activePage = page;
+  ngOnInit() {
+    this.router.events.subscribe(() => {
+      this.currentRoute = this.router.url;
+    });
+  }
+
+  getNgClass(page: string) {
+    if (this.currentRoute === `/${page}`) {
+      return 'bg-dark';
+    }
+    return 'bg-darker';
   }
 }

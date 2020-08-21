@@ -9,30 +9,6 @@
     <div id="name">Cristian Aldea</div>
     <app-top-bar></app-top-bar>
 
-    <!-- TODO: Temporary replacement for router outlet. To be deleted -->
-    <!-- <router-outlet></router-outlet> -->
-
-    <ng-container
-      *ngIf="
-        pageRouter.aboutPageActive() ||
-        pageRouter.projectPageActive() ||
-        pageRouter.experiencePageActive() ||
-        pageRouter.contactPageActive()
-      "
-    >
-      <app-about-page *ngIf="pageRouter.aboutPageActive()"></app-about-page>
-
-      <app-projects-page
-        *ngIf="pageRouter.projectPageActive()"
-      ></app-projects-page>
-
-      <app-experience-page
-        *ngIf="pageRouter.experiencePageActive()"
-      ></app-experience-page>
-
-      <app-contact-page
-        *ngIf="pageRouter.contactPageActive()"
-      ></app-contact-page>
-    </ng-container>
+    <router-outlet></router-outlet>
   </div>
 </div>
