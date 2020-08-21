@@ -114,6 +114,10 @@ $smaller-width: 400px;
   color: $accent-color-dark;
 }
 
+:focus {
+  outline: 0;
+}
+
 .section-content-card {
   @extend .bg-darker;
   @extend .card;
