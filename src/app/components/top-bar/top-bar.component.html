@@ -1,32 +1,32 @@
 <div class="horizontal-bar">
   <div
-    (click)="navigatePage(pages.ABOUT)"
+    [routerLink]="routes.about"
     class="top-bar-button"
-    [class]="pageRouter.aboutPageActive() ? 'bg-dark' : 'bg-darker'"
+    [ngClass]="getNgClass(routes.about)"
   >
     About Me
   </div>
 
   <div
-    (click)="navigatePage(pages.PROJECT)"
+    [routerLink]="routes.projects"
     class="top-bar-button"
-    [class]="pageRouter.projectPageActive() ? 'bg-dark' : 'bg-darker'"
+    [ngClass]="getNgClass(routes.projects)"
   >
     Projects
   </div>
 
   <div
-    (click)="navigatePage(pages.EXPERIENCE)"
+    [routerLink]="routes.experience"
     class="top-bar-button"
-    [class]="pageRouter.experiencePageActive() ? 'bg-dark' : 'bg-darker'"
+    [ngClass]="getNgClass(routes.experience)"
   >
     Experience
   </div>
 
   <div
-    (click)="navigatePage(pages.CONTACT)"
+    [routerLink]="routes.contact"
     class="top-bar-button"
-    [class]="pageRouter.contactPageActive() ? 'bg-dark' : 'bg-darker'"
+    [ngClass]="getNgClass(routes.contact)"
   >
     Contact
   </div>

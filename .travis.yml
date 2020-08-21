@@ -12,15 +12,10 @@ install:
 script:
   - npm i
   - ng build --prod
-  - echo "cristianaldea.online" > dist/project-megaphone/CNAME
 
 deploy:
-  provider: pages
-  local_dir: dist/project-megaphone/
-  github_token: $GITHUB_TOKEN
-  repo: TheGreatMarkus/TheGreatMarkus.github.io
-  target_branch: master
-  skip_cleanup: true
-  keep_history: true
+  provider: firebase
   on:
     branch: master
+  token: $FIREBASE_TOKEN
+  edge: true
