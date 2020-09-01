@@ -34,20 +34,20 @@ $smaller-width: 400px;
 
 // Background colors
 .bg-darkest {
-  background: rgba($color: $background-color, $alpha: 0.7);
+  background: rgba($color: $background-color, $alpha: 0.9);
 }
 
 .bg-darker {
   background-color: rgba(
     $color: lighten($color: $background-color, $amount: 10%),
-    $alpha: 0.7
+    $alpha: 0.9
   );
 }
 
 .bg-dark {
   background-color: rgba(
     $color: lighten($color: $background-color, $amount: 25%),
-    $alpha: 0.7
+    $alpha: 0.9
   );
 }
 
@@ -93,7 +93,7 @@ $smaller-width: 400px;
 }
 
 .section-content-card {
-  @extend .bg-darker;
+  @extend .bg-darkest;
   @extend .card;
 
   display: block;

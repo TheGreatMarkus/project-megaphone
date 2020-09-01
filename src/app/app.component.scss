@@ -5,7 +5,7 @@ $animation-duration: 1s;
 
 #name {
   @extend .largest-text;
-  @extend .bg-darker;
+  @extend .bg-darkest;
   @extend .card;
 
   width: 100%;
@@ -85,17 +85,17 @@ $animation-duration: 1s;
 }
 
 .fade-in {
-  opacity: 0;
+  filter: brightness(0%);
   animation: $animation-duration ease-out $animation-delay forwards
     fadeInDelayed;
 }
 
 @keyframes fadeInDelayed {
   0% {
-    opacity: 0;
+    filter: brightness(0%);
   }
   100% {
-    opacity: 1;
+    filter: brightness(100%);
   }
 }
 

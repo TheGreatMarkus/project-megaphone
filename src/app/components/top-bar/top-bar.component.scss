@@ -23,6 +23,7 @@
   @extend .larger-text;
   @extend .button;
   @extend .card;
+  @extend .bg-darkest;
 
   @media screen {
     flex: 1;
