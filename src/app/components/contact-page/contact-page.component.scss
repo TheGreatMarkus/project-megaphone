@@ -22,5 +22,7 @@ a > * {
 }
 
 span {
-  @extend .larger-text;
+  @extend .large-text;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
