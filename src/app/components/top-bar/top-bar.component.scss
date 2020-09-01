@@ -3,31 +3,33 @@
 .horizontal-bar {
   @media screen {
     flex-direction: row;
-    margin: 1em 0;
+    margin: 1em 0px;
+    gap: 15px;
+    align-items: center;
   }
   @media (max-width: $small-width) {
     flex-direction: column;
     height: fit-content;
+    gap: 8px;
+    align-items: stretch;
   }
 
   display: flex;
-  align-items: center;
+
   width: 100%;
-  justify-content: space-between;
 }
 
 .top-bar-button {
   @extend .larger-text;
   @extend .button;
   @extend .card;
+  @extend .bg-darkest;
 
   @media screen {
-    flex-basis: 23%;
+    flex: 1;
   }
   @media (max-width: $small-width) {
-    width: 100%;
-    margin: 5px 0;
   }
   text-align: center;
-  padding: 0.5em 0px;
+  padding: 0.3em 5px;
 }

@@ -7,87 +7,59 @@ $accent-color-light: #88ffff;
 $accent-color-dark: #009faf;
 
 $background-color: #252525;
-$foreground-color: #f0f0f0;
+$foreground-color: #d0d0d0;
 
-$small-width: 800px;
+$small-width: 900px;
 $smaller-width: 400px;
 
 // Text sizes
+
 .normal-text {
   @media screen {
-    font-size: 18px;
-  }
-  @media (max-width: $small-width) {
-    font-size: 12px;
-  }
-  @media (max-width: $smaller-width) {
-    font-size: 9px;
+    font-size: 22px;
   }
 }
 
 .large-text {
-  @media screen {
-    font-size: 24px;
-  }
-  @media (max-width: $small-width) {
-    font-size: 16px;
-  }
-  @media (max-width: $smaller-width) {
-    font-size: 12px;
-  }
+  font-size: 1.3rem;
 }
 
 .larger-text {
-  @media screen {
-    font-size: 36px;
-  }
-  @media (max-width: $small-width) {
-    font-size: 24px;
-  }
-  @media (max-width: $smaller-width) {
-    font-size: 18px;
-  }
+  font-size: 1.8rem;
 }
 
 .largest-text {
-  @media screen {
-    font-size: 60px;
-  }
-  @media (max-width: $small-width) {
-    font-size: 40px;
-  }
-  @media (max-width: $smaller-width) {
-    font-size: 30px;
-  }
+  font-size: 2.5rem;
 }
 
 // Background colors
 .bg-darkest {
-  background: rgba($color: $background-color, $alpha: 0.7);
+  background: rgba($color: $background-color, $alpha: 0.9);
 }
 
 .bg-darker {
   background-color: rgba(
     $color: lighten($color: $background-color, $amount: 10%),
-    $alpha: 0.7
+    $alpha: 0.9
   );
 }
 
 .bg-dark {
   background-color: rgba(
     $color: lighten($color: $background-color, $amount: 25%),
-    $alpha: 0.7
+    $alpha: 0.9
   );
 }
 
 // To disable the selection of text
-.noselect {
+.no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card {
@@ -99,13 +71,15 @@ $smaller-width: 400px;
 }
 
 .button {
-  @extend .noselect;
+  @extend .no-select;
   cursor: pointer;
   transition: filter ease 0.3s;
 }
 
-.button:hover {
-  filter: brightness(130%);
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    filter: brightness(130%);
+  }
 }
 
 .button:active {
@@ -119,7 +93,7 @@ $smaller-width: 400px;
 }
 
 .section-content-card {
-  @extend .bg-darker;
+  @extend .bg-darkest;
   @extend .card;
 
   display: block;

@@ -10,11 +10,16 @@ a {
   @extend .bg-darker;
   @extend .card;
   margin: 0.5em 0;
-  padding: 0 1em;
+  padding: 0 10px;
   display: block;
   align-content: center;
   text-decoration-line: none;
   width: fit-content;
+}
+
+#icon {
+  font-size: 2.5rem;
+  padding: 10px 10px 10px 0;
 }
 
 a > * {
@@ -22,5 +27,7 @@ a > * {
 }
 
 span {
-  @extend .larger-text;
+  @extend .large-text;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }

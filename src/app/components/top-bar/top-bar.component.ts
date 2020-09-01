@@ -21,8 +21,8 @@ export class TopBarComponent implements OnInit {
 
   getNgClass(page: string) {
     if (this.currentRoute === `/${page}`) {
-      return 'bg-dark';
+      return 'bg-darker';
     }
-    return 'bg-darker';
+    return 'bg-darkest';
   }
 }
