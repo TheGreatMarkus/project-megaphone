@@ -1,5 +1,8 @@
 @import "../common.scss";
 
+$animation-delay: 2s;
+$animation-duration: 1s;
+
 #name {
   @extend .largest-text;
   @extend .bg-darker;
@@ -18,14 +21,14 @@
 
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 50%;
   z-index: 3;
 
   height: fit-content;
 
   background-color: black;
 
-  animation: moveDelayed 3s;
+  animation: $animation-duration ease-out $animation-delay forwards moveDelayed;
 }
 
 #message-container {
@@ -42,7 +45,6 @@
 }
 
 #background-image {
-  @extend .fade-in;
   position: fixed;
 
   width: 100%;
@@ -83,14 +85,13 @@
 }
 
 .fade-in {
-  animation: fadeInDelayed 3s;
+  opacity: 0;
+  animation: $animation-duration ease-out $animation-delay forwards
+    fadeInDelayed;
 }
 
 @keyframes fadeInDelayed {
   0% {
-    opacity: 0;
-  }
-  66% {
     opacity: 0;
   }
   100% {
@@ -100,9 +101,6 @@
 
 @keyframes moveDelayed {
   0% {
-    bottom: 50%;
-  }
-  66% {
     bottom: 50%;
   }
   100% {
