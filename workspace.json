@@ -8,22 +8,15 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/megaphone-ui",
             "index": "apps/megaphone-ui/src/index.html",
             "main": "apps/megaphone-ui/src/main.tsx",
             "polyfills": "apps/megaphone-ui/src/polyfills.ts",
             "tsConfig": "apps/megaphone-ui/tsconfig.app.json",
-            "assets": [
-              "apps/megaphone-ui/src/favicon.ico",
-              "apps/megaphone-ui/src/assets"
-            ],
-            "styles": [
-              "apps/megaphone-ui/src/styles.scss"
-            ],
+            "assets": ["apps/megaphone-ui/src/favicon.ico", "apps/megaphone-ui/src/assets"],
+            "styles": ["apps/megaphone-ui/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -66,16 +59,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/megaphone-ui/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/megaphone-ui/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/megaphone-ui"
-          ],
+          "outputs": ["coverage/apps/megaphone-ui"],
           "options": {
             "jestConfig": "apps/megaphone-ui/jest.config.js",
             "passWithNoTests": true
@@ -104,9 +93,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/megaphone-ui-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/megaphone-ui-e2e/**/*.{js,ts}"]
           }
         }
       }
