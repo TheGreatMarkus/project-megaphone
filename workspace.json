@@ -15,7 +15,7 @@
             "main": "apps/megaphone-ui/src/main.tsx",
             "polyfills": "apps/megaphone-ui/src/polyfills.ts",
             "tsConfig": "apps/megaphone-ui/tsconfig.app.json",
-            "assets": ["apps/megaphone-ui/src/favicon.ico", "apps/megaphone-ui/src/assets"],
+            "assets": ["apps/megaphone-ui/src/favicon.png", "apps/megaphone-ui/src/assets"],
             "styles": ["apps/megaphone-ui/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
