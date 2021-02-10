@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+.top-bar-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: $top-bar-height;
+  background-color: transparentize($background-color, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-bar-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.top-bar-button-group {
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

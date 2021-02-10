@@ -1,0 +1,23 @@
+@import '../../../variables.scss';
+
+.home-page-container {
+  padding-top: $top-bar-height;
+
+  background: url('../../../assets/images/starry-sky.jpg');
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+
+  box-shadow: inset 0px 400px 250px 200px rgba(0, 0, 0, 0.5);
+}
+
+.home-page-title {
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.home-page-subtext {
+  font-size: 3rem;
+  margin-top: 4rem;
+}

@@ -1,0 +1,11 @@
+@import '../../../variables.scss';
+
+.typing-text-cursor {
+  position: relative;
+  bottom: 5px;
+  right: 9px;
+}
+
+.typing-text-container {
+  color: $accent-text-color;
+}

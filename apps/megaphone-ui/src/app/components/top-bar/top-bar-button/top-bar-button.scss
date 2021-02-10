@@ -1,0 +1,15 @@
+@import '../../../../variables.scss';
+.top-bar-button-container {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: unset;
+}
+
+.top-bar-button-container:hover {
+  background-color: transparentize($main-text-color, 0.9);
+}
+
+.top-bar-button-active {
+  background-color: $main-text-color !important;
+  color: $background-color !important;
+}

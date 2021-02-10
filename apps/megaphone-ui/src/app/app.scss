@@ -1,0 +1,53 @@
+@import '../variables.scss';
+
+.app-main-container {
+  width: 100vw;
+}
+
+// .backgroundContainer {
+//   position: fixed;
+//   //   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+
+//   background-image: url('../assets/images/night-sky.jpg');
+//   background-size: 100% auto;
+//   background-repeat: no-repeat;
+//   background-position: center bottom;
+
+//   box-shadow: inset 0px 565px 250px rgba(0, 0, 0, 0.7);
+// }
+
+// .contentContainer {
+//   position: static;
+
+//   top: $top-bar-height;
+//   right: 0;
+//   left: 0;
+
+//   width: 75rem;
+//   height: calc(100vh - #{$top-bar-height});
+//   margin: 0 auto;
+// }
+
+.section-container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.section-content-container {
+  width: 75rem;
+  margin: auto;
+}
+
+.inline {
+  display: inline;
+}
+
+.pre-typing-text-space {
+  margin-right: 1rem;
+}

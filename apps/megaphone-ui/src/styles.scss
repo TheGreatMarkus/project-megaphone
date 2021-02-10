@@ -1,13 +1,13 @@
 @import 'variables.scss';
 
 @font-face {
-  font-family: 'RobotoMono';
+  font-family: 'Roboto Mono';
   src: url('./assets/fonts/RobotoMono/RobotoMono-VariableFont_wght.ttf') format('truetype');
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'RobotoMono';
+  font-family: 'Roboto Mono';
   src: url('./assets/fonts/RobotoMono/RobotoMono-Italic-VariableFont_wght.ttf') format('truetype');
   font-style: italic;
 }
@@ -16,17 +16,24 @@
   margin: 0;
   padding: 0;
   border: 0;
-
-  font-family: 'RobotoMono', Courier, monospace;
-
-  color: $foreground-color;
+  font-size: 100%;
+  color: inherit;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
+  font-family: 'Roboto Mono', Courier, monospace;
+  font-weight: normal;
   font-size: 16px;
-  background-color: black;
-}
 
-button:hover {
-  filter: brightness(110%);
+  color: $main-text-color;
+  background-color: black;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }

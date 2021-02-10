@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './top-bar-button.module.scss';
+import './top-bar-button.scss';
 
 /* eslint-disable-next-line */
 export interface TopBarButtonProps {
@@ -11,7 +11,7 @@ export function TopBarButton({ children }: TopBarButtonProps) {
 
   return (
     <button
-      className={`${styles.container} ${active ? styles.active : ''}`}
+      className={`top-bar-button-container ${active ? 'top-bar-button-active' : ''}`}
       onClick={() => {
         setActive(!active);
       }}
