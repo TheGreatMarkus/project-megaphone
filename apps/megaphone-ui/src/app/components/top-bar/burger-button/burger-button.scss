@@ -1,0 +1,35 @@
+@import '../../../../variables.scss';
+.hamburger-button-container {
+  padding: 5px;
+  box-sizing: border-box;
+  width: 3.5rem;
+  height: 3.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hamburger-button-line {
+  height: 5px;
+  width: 100%;
+  background-color: $main-text-color;
+  border-radius: 5px;
+
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger-button-activated {
+  .hamburger-button-top {
+    transform: translateY(1rem) rotate(45deg);
+  }
+
+  .hamburger-button-middle {
+    opacity: 0;
+  }
+
+  .hamburger-button-bottom {
+    transform: translateY(-1rem) rotate(-45deg);
+  }
+}

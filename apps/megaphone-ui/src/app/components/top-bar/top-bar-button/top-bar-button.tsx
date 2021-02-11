@@ -10,14 +10,14 @@ export function TopBarButton({ children }: TopBarButtonProps) {
   const [active, setActive] = useState<boolean>(false);
 
   return (
-    <button
+    <div
       className={`top-bar-button-container ${active ? 'top-bar-button-active' : ''}`}
       onClick={() => {
         setActive(!active);
       }}
     >
       {children}
-    </button>
+    </div>
   );
 }
 

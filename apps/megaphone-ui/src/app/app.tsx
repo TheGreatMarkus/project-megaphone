@@ -1,10 +1,7 @@
 import React from 'react';
 import './app.scss';
-import TopBar from './components/top-bar/top-bar';
-import AboutPage from './pages/about-page/about-page';
-import ContactPage from './pages/contact-page/contact-page';
-import HomePage from './pages/home-page/home-page';
-import ProjectsPage from './pages/projects-page/projects-page';
+import { TopBar } from './components';
+import { AboutPage, ContactPage, HomePage, ProjectsPage } from './pages';
 
 export function App() {
   return (
