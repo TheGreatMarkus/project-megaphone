@@ -50,6 +50,8 @@
 
 @media (min-width: $tablet-breakpoint) {
   .top-bar-button-group {
+    background-color: transparent;
+
     position: static;
     margin-right: 1rem;
 

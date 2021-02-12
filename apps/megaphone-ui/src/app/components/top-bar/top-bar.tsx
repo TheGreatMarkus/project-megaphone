@@ -21,7 +21,7 @@ export function TopBar(props: TopBarProps) {
       <div className={`top-bar-button-group ${!burgerOpen ? 'top-bar-burger-menu-closed' : ''}`}>
         <TopBarButton href="#home-page">Home</TopBarButton>
         <TopBarButton href="#about-page">About</TopBarButton>
-        <TopBarButton href="#projects-page">Project</TopBarButton>
+        <TopBarButton href="#projects-page">Projects</TopBarButton>
         <TopBarButton href="#contact-page">Contact</TopBarButton>
       </div>
     </nav>
