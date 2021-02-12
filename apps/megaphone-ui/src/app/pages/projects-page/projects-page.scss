@@ -1,0 +1,4 @@
+@import '../../../mixins.scss';
+.projects-page-container {
+  @include background-image('../../../assets/images/keyboard.jpg');
+}

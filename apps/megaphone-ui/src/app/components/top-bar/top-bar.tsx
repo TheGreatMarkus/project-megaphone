@@ -14,23 +14,17 @@ export function TopBar(props: TopBarProps) {
   };
 
   return (
-    <div className="top-bar-container">
+    <nav className="top-bar-container">
       <div className="top-bar-title">Cristian Aldea</div>
-      <div className="top-bar-button-group">
-        <TopBarButton>Home</TopBarButton>
-        <TopBarButton>About</TopBarButton>
-        <TopBarButton>Project</TopBarButton>
-        <TopBarButton>Contact</TopBarButton>
-      </div>
 
       <BurgerButton className="top-bar-burger-button" onClick={handleBurgerClick} activated={burgerOpen} />
-      <div className={`top-bar-burger-menu ${!burgerOpen ? 'top-bar-burger-menu-closed' : ''}`}>
-        <TopBarButton>Home</TopBarButton>
-        <TopBarButton>About</TopBarButton>
-        <TopBarButton>Project</TopBarButton>
-        <TopBarButton>Contact</TopBarButton>
+      <div className={`top-bar-button-group ${!burgerOpen ? 'top-bar-burger-menu-closed' : ''}`}>
+        <TopBarButton href="#home-page">Home</TopBarButton>
+        <TopBarButton href="#about-page">About</TopBarButton>
+        <TopBarButton href="#projects-page">Project</TopBarButton>
+        <TopBarButton href="#contact-page">Contact</TopBarButton>
       </div>
-    </div>
+    </nav>
   );
 }
 

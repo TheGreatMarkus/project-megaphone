@@ -1,24 +1,46 @@
 @import '../../../variables.scss';
+@import '../../../mixins.scss';
 
 .home-page-container {
   padding-top: $top-bar-height;
 
-  background: url('../../../assets/images/starry-sky.jpg');
-
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: bottom;
-
-  box-shadow: inset 0px 400px 250px 200px rgba(0, 0, 0, 0.5);
+  @include background-image('../../../assets/images/starry-sky.jpg', center, bottom, 400px);
 }
 
 .home-page-title {
-  font-size: 5rem;
+  position: absolute;
+  top: $top-bar-height;
+  right: 0;
+  left: 0;
+
+  font-size: 3rem;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 0.5em;
+
+  animation: fadein 1s ease-out backwards;
 }
 
 .home-page-subtext {
-  font-size: 3rem;
-  margin-top: 4rem;
+  font-size: 1.5rem;
+  margin-top: 8em;
+}
+
+@media (min-width: $mobile-breakpoint) {
+  .home-page-title {
+    font-size: 4rem;
+  }
+
+  .home-page-subtext {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .home-page-title {
+    font-size: 5rem;
+  }
+
+  .home-page-subtext {
+    font-size: 2.5rem;
+  }
 }

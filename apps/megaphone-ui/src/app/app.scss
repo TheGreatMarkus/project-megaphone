@@ -1,13 +1,15 @@
 @import '../variables.scss';
 
 .app-main-container {
-  width: 100vw;
+  background: black;
 }
 
 .section-container {
   width: 100vw;
   height: 100vh;
-  box-sizing: border-box;
+  max-width: 100%;
+
+  animation: fadein 2s ease-out 1s backwards;
 }
 
 .section-content-container {
@@ -20,8 +22,4 @@
     width: $tablet-breakpoint;
     margin: auto;
   }
-}
-
-.inline {
-  display: inline;
 }

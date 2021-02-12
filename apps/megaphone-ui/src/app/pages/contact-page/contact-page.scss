@@ -1,5 +1,6 @@
 @import '../../../variables.scss';
+@import '../../../mixins.scss';
 
 .contact-page-container {
-  height: calc(100vh - #{$top-bar-height});
+  @include background-image('../../../assets/images/web.jpg');
 }

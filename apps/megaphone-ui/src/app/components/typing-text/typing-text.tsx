@@ -117,10 +117,10 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
   };
 
   return (
-    <>
-      <div className={`inline typing-text-container${className}`}>{text}</div>
-      <div className={`inline typing-text-container typing-text-cursor ${className}`}>{showCursor ? '|' : ''}</div>
-    </>
+    <div className="inline typing-text-container noselect">
+      <div className={`inline ${className}`}>{text}</div>
+      <div className={`inline typing-text-cursor ${className}`}>{showCursor ? '|' : ''}</div>
+    </div>
   );
 }
 

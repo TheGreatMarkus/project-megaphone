@@ -22,6 +22,10 @@
   vertical-align: baseline;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto Mono', Courier, monospace;
   font-weight: normal;
@@ -30,10 +34,37 @@ body {
   color: $main-text-color;
   background-color: black;
 
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow: auto;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
 
-  ::-webkit-scrollbar {
-    display: none;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.inline {
+  display: inline;
 }

@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+@mixin background-image($url, $position-x: center, $position-y: center, $y-offset: 0px) {
+  background: url($url);
+
+  background-size: cover;
+  background-position-x: $position-x;
+  background-position-y: $position-y;
+
+  box-shadow: inset 0px $y-offset 250px 50px rgba(0, 0, 0, 0.7);
+
+  @media (min-width: $mobile-breakpoint) {
+    box-shadow: inset 0px $y-offset 250px 100px rgba(0, 0, 0, 0.7);
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    box-shadow: inset 0px $y-offset 250px 250px rgba(0, 0, 0, 0.7);
+  }
+}
