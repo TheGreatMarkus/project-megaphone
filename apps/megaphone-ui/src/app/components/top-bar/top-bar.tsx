@@ -11,7 +11,6 @@ export function TopBar(props: TopBarProps) {
   const options = ['Home', 'About', 'Projects', 'Contact'];
   const [activeOption, _setActiveOption] = useState<number>(0);
   const activeOptionRef = useRef<number>(0);
-  const targetOptionRef = useRef<number>(-1);
 
   const setActiveOption = (value: number) => {
     activeOptionRef.current = value;
@@ -30,33 +29,16 @@ export function TopBar(props: TopBarProps) {
     const scroll = window.scrollY;
     const windowHeight = window.innerHeight;
     const activeOption = activeOptionRef.current;
-    const target = targetOptionRef.current;
 
     // If in activate space and either (this is the target or there is no target and this isn't the active option)
-    if (((activeOption !== 0 && target === -1) || target === 0) && scroll < windowHeight * 0.4) {
+    if (activeOption !== 0 && scroll < windowHeight * 0.33) {
       setActiveOption(0);
-      targetOptionRef.current = -1;
-    } else if (
-      ((activeOption != 1 && target === -1) || target === 1) &&
-      scroll > windowHeight &&
-      scroll < windowHeight * 1.4
-    ) {
+    } else if (activeOption != 1 && scroll > windowHeight * 0.66 && scroll < windowHeight * 1.33) {
       setActiveOption(1);
-      targetOptionRef.current = -1;
-    } else if (
-      ((activeOption != 2 && target === -1) || target === 2) &&
-      scroll > windowHeight * 2 &&
-      scroll < windowHeight * 2.4
-    ) {
+    } else if (activeOption != 2 && scroll > windowHeight * 1.66 && scroll < windowHeight * 2.33) {
       setActiveOption(2);
-      targetOptionRef.current = -1;
-    } else if (
-      ((activeOption != 3 && target === -1) || target === 3) &&
-      scroll > windowHeight * 3 &&
-      scroll < windowHeight * 3.4
-    ) {
+    } else if (activeOption != 3 && scroll > windowHeight * 2.66 && scroll < windowHeight * 3.33) {
       setActiveOption(3);
-      targetOptionRef.current = -1;
     }
   };
 
@@ -75,14 +57,7 @@ export function TopBar(props: TopBarProps) {
               active={activeOption === i}
               key={i}
               onClick={() => {
-                setActiveOption(i);
-                targetOptionRef.current = i;
                 setBurgerOpen(false);
-                setTimeout(() => {
-                  if (targetOptionRef.current !== -1) {
-                    targetOptionRef.current = -1;
-                  }
-                }, 1000);
               }}
             >
               {option}
