@@ -14,11 +14,11 @@ enum Action {
   WAITING_BEFORE_TYPING,
 }
 
-const blinkWait = 500;
+const blinkWait = 450;
 const typeWait = 150;
 const deleteWait = 150;
-const doneDeletingPause = 1000;
-const doneTypingPause = 2200;
+const doneDeletingPause = 1234;
+const doneTypingPause = 2134;
 
 export function TypingText({ messages, loop, className }: TypingTextProps) {
   let [text, setText] = useState<string>('');
@@ -52,6 +52,7 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
       let tempChar = charIndex;
       let tempPhrase = phraseIndex;
       setText((text) => text + messages[tempPhrase][tempChar]);
+      setShowCursor(true);
 
       if (charIndex === messages[phraseIndex].length - 1) {
         // We're done typing the current phrase
@@ -60,7 +61,6 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
 
         if (phraseIndex === messages.length - 1) {
           // The last phrase was typed completely
-          setShowCursor(true);
 
           if (loop) {
             phraseIndex = -1;
@@ -76,12 +76,12 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
       } else {
         // Keep typing
         charIndex++;
-        setShowCursor(true);
         wait = typeWait;
       }
     } else if (currentAction === Action.DELETING) {
       // Remove last char
       setText((text) => text.substring(0, text.length - 1));
+      setShowCursor(true);
 
       if (charIndex === 0) {
         // Phrase deletion completed
@@ -93,17 +93,15 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
         // Keep deleting
         charIndex--;
         wait = deleteWait;
-        setShowCursor(true);
       }
     } else {
+      setShowCursor((showCursor) => !showCursor);
       if (pause > blinkWait) {
-        setShowCursor((showCursor) => !showCursor);
         wait = blinkWait;
         pause -= wait;
       } else {
         wait = pause;
         pause = 0;
-        setShowCursor(true);
         if (currentAction === Action.WAITING_BEFORE_TYPING) {
           currentAction = Action.TYPING;
           phraseIndex++;

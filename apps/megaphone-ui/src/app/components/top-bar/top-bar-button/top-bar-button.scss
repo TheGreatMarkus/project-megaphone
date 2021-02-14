@@ -1,8 +1,10 @@
 @import '../../../../variables.scss';
 .top-bar-button-container {
   display: block;
+
   font-size: 2rem;
   padding: 1rem;
+
   background-color: transparent;
   text-align: center;
 }
@@ -12,6 +14,6 @@
 }
 
 .top-bar-button-active {
-  background-color: $main-text-color !important;
+  // background-color: $main-text-color !important;
   color: $background-color !important;
 }

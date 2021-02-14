@@ -17,3 +17,11 @@
     box-shadow: inset 0px $y-offset 250px 250px rgba(0, 0, 0, 0.7);
   }
 }
+
+@mixin delayed-fadein() {
+  animation: fadein 2s ease-out 1.5s backwards;
+}
+
+@mixin instant-fadein() {
+  animation: fadein 1.5s ease-out backwards;
+}
