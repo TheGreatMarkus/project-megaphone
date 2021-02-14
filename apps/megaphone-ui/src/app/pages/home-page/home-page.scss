@@ -2,8 +2,6 @@
 @import '../../../mixins.scss';
 
 .home-page-container {
-  padding-top: $top-bar-height;
-
   @include background-image('../../../assets/images/starry-sky.jpg', center, bottom, 400px);
 }
 

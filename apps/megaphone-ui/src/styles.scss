@@ -73,9 +73,13 @@ a {
 
 .section-container {
   display: inline-block;
+  box-sizing: border-box;
+
   width: 100vw;
   height: 100vh;
   max-width: 100%;
+
+  padding-top: $top-bar-height;
 
   @include delayed-fadein;
 }
