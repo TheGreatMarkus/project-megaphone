@@ -11,7 +11,7 @@ export interface BurgerButtonProps {
 export function BurgerButton({ onClick, className = '', activated }: BurgerButtonProps) {
   return (
     <div
-      className={`hamburger-button-container ${activated ? 'hamburger-button-activated' : ''} ${className}`}
+      className={`hamburger-button-container ${className} ${activated ? 'hamburger-button-activated' : ''}`}
       onClick={onClick}
     >
       <div className="hamburger-button-line hamburger-button-top"></div>

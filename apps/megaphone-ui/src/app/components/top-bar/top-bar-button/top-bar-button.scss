@@ -1,12 +1,13 @@
 @import '../../../../variables.scss';
 .top-bar-button-container {
-  display: block;
+  display: flex;
 
   font-size: 2rem;
-  padding: 1rem;
+  padding: 0rem 1rem;
+  height: $top-bar-height;
 
-  background-color: transparent;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .top-bar-button-container:hover {
@@ -14,6 +15,5 @@
 }
 
 .top-bar-button-active {
-  // background-color: $main-text-color !important;
   color: $background-color !important;
 }

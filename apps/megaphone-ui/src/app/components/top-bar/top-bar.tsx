@@ -7,7 +7,7 @@ import './top-bar.scss';
 export interface TopBarProps {}
 
 export function TopBar(props: TopBarProps) {
-  const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const options = ['Home', 'About', 'Projects', 'Contact'];
   const [activeOption, _setActiveOption] = useState<number>(0);
   const activeOptionRef = useRef<number>(0);
@@ -18,7 +18,7 @@ export function TopBar(props: TopBarProps) {
   };
 
   const handleBurgerClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    setBurgerOpen(!burgerOpen);
+    setMenuOpen(!menuOpen);
   };
 
   useEffect(() => {
@@ -30,7 +30,6 @@ export function TopBar(props: TopBarProps) {
     const windowHeight = window.innerHeight;
     const activeOption = activeOptionRef.current;
 
-    // If in activate space and either (this is the target or there is no target and this isn't the active option)
     if (activeOption !== 0 && scroll < windowHeight * 0.33) {
       setActiveOption(0);
     } else if (activeOption != 1 && scroll > windowHeight * 0.66 && scroll < windowHeight * 1.33) {
@@ -48,7 +47,7 @@ export function TopBar(props: TopBarProps) {
         Cristian Aldea
       </a>
 
-      <div className={`top-bar-button-group ${!burgerOpen ? 'top-bar-burger-menu-closed' : ''}`}>
+      <div className={`top-bar-button-group ${!menuOpen ? 'top-bar-menu-closed' : ''}`}>
         <div className={`top-bar-slide-box position-${activeOption}`} />
         {options.map((option, i) => {
           return (
@@ -57,7 +56,7 @@ export function TopBar(props: TopBarProps) {
               active={activeOption === i}
               key={i}
               onClick={() => {
-                setBurgerOpen(false);
+                setMenuOpen(false);
               }}
             >
               {option}
@@ -66,7 +65,7 @@ export function TopBar(props: TopBarProps) {
         })}
       </div>
 
-      <BurgerButton className="top-bar-burger-button" onClick={handleBurgerClick} activated={burgerOpen} />
+      <BurgerButton className="top-bar-burger-button" onClick={handleBurgerClick} activated={menuOpen} />
     </nav>
   );
 }
