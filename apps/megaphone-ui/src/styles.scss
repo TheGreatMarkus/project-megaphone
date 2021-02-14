@@ -1,4 +1,5 @@
 @import 'variables.scss';
+@import 'mixins.scss';
 
 @font-face {
   font-family: 'Roboto Mono';
@@ -33,14 +34,6 @@ body {
 
   color: $main-text-color;
   background-color: black;
-
-  overflow: auto;
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 a {
@@ -56,6 +49,15 @@ a {
   }
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -69,6 +71,38 @@ a {
   display: inline;
 }
 
-.no-scroll {
-  overflow: hidden;
+.section-container {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+
+  @include delayed-fadein;
+}
+
+.section-content-container {
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .section-content-container {
+    width: $tablet-breakpoint;
+    margin: auto;
+  }
+  .page-title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .page-title {
+    font-size: 5rem;
+  }
 }

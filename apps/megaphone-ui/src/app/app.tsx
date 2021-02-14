@@ -6,7 +6,7 @@ import { AboutPage, ContactPage, HomePage, ProjectsPage } from './pages';
 export function App() {
   return (
     <div>
-      <div className={`app-main-container `}>
+      <div className="app-main-container hide-scrollbar">
         <HomePage />
         <AboutPage />
         <ProjectsPage />

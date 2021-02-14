@@ -7,7 +7,10 @@ export interface ContactPageProps {}
 export function ContactPage(props: ContactPageProps) {
   return (
     <div className="section-container contact-page-container" id="contact-page">
-      <h1>Welcome to contact-page!</h1>
+      <div className="section-content-container">
+        <div className="page-title">Contact</div>
+        <div>Coming soon!</div>
+      </div>
     </div>
   );
 }

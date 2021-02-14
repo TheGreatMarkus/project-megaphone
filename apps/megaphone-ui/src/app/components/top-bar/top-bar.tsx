@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import BurgerButton from './burger-button/burger-button';
 import TopBarButton from './top-bar-button/top-bar-button';
 import './top-bar.scss';
@@ -9,7 +9,14 @@ export interface TopBarProps {}
 export function TopBar(props: TopBarProps) {
   const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
   const options = ['Home', 'About', 'Projects', 'Contact'];
-  const [activeOption, setActiveOption] = useState<number>(0);
+  const [activeOption, _setActiveOption] = useState<number>(0);
+  const activeOptionRef = useRef<number>(0);
+  const targetOptionRef = useRef<number>(-1);
+
+  const setActiveOption = (value: number) => {
+    activeOptionRef.current = value;
+    _setActiveOption(value);
+  };
 
   const handleBurgerClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setBurgerOpen(!burgerOpen);
@@ -21,18 +28,35 @@ export function TopBar(props: TopBarProps) {
 
   const onScroll = (ev: Event) => {
     const scroll = window.scrollY;
-    const height = window.innerHeight;
+    const windowHeight = window.innerHeight;
+    const activeOption = activeOptionRef.current;
+    const target = targetOptionRef.current;
 
-    console.log({ scroll, height });
-
-    if (scroll < window.innerHeight) {
+    // If in activate space and either (this is the target or there is no target and this isn't the active option)
+    if (((activeOption !== 0 && target === -1) || target === 0) && scroll < windowHeight * 0.4) {
       setActiveOption(0);
-    } else if (scroll > window.innerHeight && scroll < window.innerHeight * 1.4) {
+      targetOptionRef.current = -1;
+    } else if (
+      ((activeOption != 1 && target === -1) || target === 1) &&
+      scroll > windowHeight &&
+      scroll < windowHeight * 1.4
+    ) {
       setActiveOption(1);
-    } else if (scroll > window.innerHeight * 2 && scroll < window.innerHeight * 2.4) {
+      targetOptionRef.current = -1;
+    } else if (
+      ((activeOption != 2 && target === -1) || target === 2) &&
+      scroll > windowHeight * 2 &&
+      scroll < windowHeight * 2.4
+    ) {
       setActiveOption(2);
-    } else if (scroll > window.innerHeight * 3 && scroll < window.innerHeight * 3.4) {
+      targetOptionRef.current = -1;
+    } else if (
+      ((activeOption != 3 && target === -1) || target === 3) &&
+      scroll > windowHeight * 3 &&
+      scroll < windowHeight * 3.4
+    ) {
       setActiveOption(3);
+      targetOptionRef.current = -1;
     }
   };
 
@@ -52,7 +76,13 @@ export function TopBar(props: TopBarProps) {
               key={i}
               onClick={() => {
                 setActiveOption(i);
+                targetOptionRef.current = i;
                 setBurgerOpen(false);
+                setTimeout(() => {
+                  if (targetOptionRef.current !== -1) {
+                    targetOptionRef.current = -1;
+                  }
+                }, 1000);
               }}
             >
               {option}

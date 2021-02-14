@@ -1,4 +1,5 @@
 @import '../../../mixins.scss';
+
 .about-page-container {
   @include background-image('../../../assets/images/notebook.jpg');
 }

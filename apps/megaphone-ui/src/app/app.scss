@@ -4,23 +4,3 @@
 .app-main-container {
   background: black;
 }
-
-.section-container {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
-
-  @include delayed-fadein();
-}
-
-.section-content-container {
-  box-sizing: border-box;
-  padding: 0 1rem;
-}
-
-@media (min-width: $tablet-breakpoint) {
-  .section-content-container {
-    width: $tablet-breakpoint;
-    margin: auto;
-  }
-}

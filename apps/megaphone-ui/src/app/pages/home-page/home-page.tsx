@@ -24,7 +24,7 @@ export function HomePage(props: HomePageProps) {
         </div>
       </div>
 
-      <div className="home-page-title">Welcome</div>
+      <div className="home-page-title page-title">Welcome</div>
     </>
   );
 }

@@ -7,7 +7,10 @@ export interface AboutPageProps {}
 export function AboutPage(props: AboutPageProps) {
   return (
     <div className="section-container about-page-container" id="about-page">
-      <h1>Welcome to about-page!</h1>
+      <div className="section-content-container">
+        <div className="page-title">About Me</div>
+        <div>Coming soon!</div>
+      </div>
     </div>
   );
 }

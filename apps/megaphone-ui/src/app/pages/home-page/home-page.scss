@@ -13,10 +13,6 @@
   right: 0;
   left: 0;
 
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 0.5em;
-
   @include instant-fadein();
 }
 
@@ -26,20 +22,12 @@
 }
 
 @media (min-width: $mobile-breakpoint) {
-  .home-page-title {
-    font-size: 4rem;
-  }
-
   .home-page-subtext {
     font-size: 2rem;
   }
 }
 
 @media (min-width: $tablet-breakpoint) {
-  .home-page-title {
-    font-size: 5rem;
-  }
-
   .home-page-subtext {
     font-size: 2.5rem;
   }
