@@ -42,10 +42,27 @@
   flex-direction: column;
   align-items: stretch;
   align-self: stretch;
+
+  transition: opacity 0.3s ease-out, visibility 0s;
+  animation: asdfasdf 0.5s;
+}
+
+@keyframes asdfasdf {
+  0% {
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 
 .top-bar-menu-closed {
-  display: none;
+  transition: opacity 0.3s ease-out, visibility 0s 0.3s;
+  opacity: 0%;
+  visibility: hidden;
 }
 
 .top-bar-slide-box {
@@ -83,6 +100,7 @@
 
 @media (min-width: $tablet-breakpoint) {
   .top-bar-button-group {
+    display: flex;
     position: relative;
     top: 0;
 
@@ -93,7 +111,9 @@
   }
 
   .top-bar-menu-closed {
-    display: flex;
+    opacity: 100%;
+    visibility: visible;
+    transition: none;
   }
 
   .top-bar-burger-button {
