@@ -78,6 +78,7 @@ a {
   box-sizing: border-box;
 
   width: 100vw;
+  min-height: $min-height;
   height: 100vh;
   max-width: 100%;
 

@@ -11,6 +11,7 @@ export function TopBar(props: TopBarProps) {
   const options = ['Home', 'About', 'Projects', 'Contact'];
   const [activeOption, _setActiveOption] = useState<number>(0);
   const activeOptionRef = useRef<number>(0);
+  const pageHeightRef = useRef<number>(0);
 
   const setActiveOption = (value: number) => {
     activeOptionRef.current = value;
@@ -23,20 +24,34 @@ export function TopBar(props: TopBarProps) {
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onResize);
+
+    const pageElement = document.getElementsByClassName('section-container')[0] as HTMLDivElement;
+    pageHeightRef.current = pageElement.offsetHeight;
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
-  const onScroll = (ev: Event) => {
+  const onResize = (event: Event) => {
+    const pageElement = document.getElementsByClassName('section-container')[0] as HTMLDivElement;
+    pageHeightRef.current = pageElement.offsetHeight;
+  };
+
+  const onScroll = (event: Event) => {
     const scroll = window.scrollY;
-    const windowHeight = window.innerHeight;
+    const pageHeight = pageHeightRef.current;
     const activeOption = activeOptionRef.current;
 
-    if (activeOption !== 0 && scroll < windowHeight * 0.33) {
+    if (activeOption !== 0 && scroll < pageHeight * 0.33) {
       setActiveOption(0);
-    } else if (activeOption != 1 && scroll > windowHeight * 0.66 && scroll < windowHeight * 1.33) {
+    } else if (activeOption != 1 && scroll > pageHeight * 0.66 && scroll < pageHeight * 1.33) {
       setActiveOption(1);
-    } else if (activeOption != 2 && scroll > windowHeight * 1.66 && scroll < windowHeight * 2.33) {
+    } else if (activeOption != 2 && scroll > pageHeight * 1.66 && scroll < pageHeight * 2.33) {
       setActiveOption(2);
-    } else if (activeOption != 3 && scroll > windowHeight * 2.66 && scroll < windowHeight * 3.33) {
+    } else if (activeOption != 3 && scroll > pageHeight * 2.66 && scroll < pageHeight * 3.33) {
       setActiveOption(3);
     }
   };
