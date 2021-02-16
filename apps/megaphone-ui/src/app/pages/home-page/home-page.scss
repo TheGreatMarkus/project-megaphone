@@ -15,18 +15,18 @@
 }
 
 .home-page-subtext {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: 7em;
 }
 
 @media (min-width: $mobile-breakpoint) {
   .home-page-subtext {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (min-width: $tablet-breakpoint) {
   .home-page-subtext {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
