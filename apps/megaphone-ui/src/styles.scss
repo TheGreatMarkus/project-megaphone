@@ -93,23 +93,26 @@ a {
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
   margin-top: 0.5em;
+}
+
+@media (min-width: $mobile-breakpoint) {
+  .section-content-container {
+    width: $mobile-breakpoint;
+    margin: auto;
+  }
+  .page-title {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: $tablet-breakpoint) {
   .section-content-container {
     width: $tablet-breakpoint;
-    margin: auto;
   }
   .page-title {
-    font-size: 4rem;
-  }
-}
-
-@media (min-width: $tablet-breakpoint) {
-  .page-title {
-    font-size: 5rem;
+    font-size: 6rem;
   }
 }

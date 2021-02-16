@@ -7,14 +7,14 @@
   background-position-x: $position-x;
   background-position-y: $position-y;
 
-  box-shadow: inset 0px $y-offset 250px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px $y-offset 100px 100px rgba(0, 0, 0, 0.8), inset 0 0 50px 25px black;
 
   @media (min-width: $mobile-breakpoint) {
-    box-shadow: inset 0px $y-offset 250px 100px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0px $y-offset 200px 200px rgba(0, 0, 0, 0.8), inset 0 0 100px 50px black;
   }
 
   @media (min-width: $tablet-breakpoint) {
-    box-shadow: inset 0px $y-offset 250px 250px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0px $y-offset 300px 300px rgba(0, 0, 0, 0.8), inset 0 0 150px 75px black;
   }
 }
 

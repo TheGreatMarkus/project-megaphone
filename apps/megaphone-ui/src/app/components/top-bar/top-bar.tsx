@@ -9,7 +9,8 @@ export interface TopBarProps {}
 export function TopBar(props: TopBarProps) {
   const options = ['Home', 'About', 'Projects', 'Contact'];
 
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [menuOpen, _setMenuOpen] = useState<boolean>(false);
+  const menuOpenRef = useRef<boolean>(false);
   const [activeOption, _setActiveOption] = useState<number>(0);
   const activeOptionRef = useRef<number>(0);
 
@@ -17,33 +18,49 @@ export function TopBar(props: TopBarProps) {
   const [animate, setAnimate] = useState<boolean>(true);
   const winWidth = useRef<number>(0);
 
+  const topBarRef = useRef<HTMLDivElement>(null);
+
   const setActiveOption = (value: number) => {
     activeOptionRef.current = value;
     _setActiveOption(value);
   };
 
+  const setMenuOpen = (value: boolean) => {
+    menuOpenRef.current = value;
+    _setMenuOpen(value);
+  };
+
   useEffect(() => {
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('mousedown', onClick);
     window.addEventListener('resize', onResize);
+    window.addEventListener('scroll', onScroll);
 
     pageRef.current = document.getElementsByClassName('section-container')[0] as HTMLDivElement;
     winWidth.current = window.innerWidth;
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('mousedown', onClick);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
-  const onResize = (event: Event) => {
+  const onClick = (event: MouseEvent) => {
+    if (menuOpenRef.current && !topBarRef.current.contains(event.target as HTMLElement)) {
+      setMenuOpen(false);
+    }
+  };
+
+  const onResize = (event: UIEvent) => {
     if (
       (winWidth.current >= 1024 && window.innerWidth < 1024) ||
       (winWidth.current < 1024 && window.innerWidth >= 1024)
     ) {
+      setMenuOpen(false);
       setAnimate(false);
       setTimeout(() => {
         setAnimate(true);
-      }, 50);
+      }, 100);
     }
 
     winWidth.current = window.innerWidth;
@@ -66,7 +83,7 @@ export function TopBar(props: TopBarProps) {
   };
 
   return (
-    <nav className="top-bar-container">
+    <nav className="top-bar-container" ref={topBarRef}>
       <a className="top-bar-title" href="#home-page">
         Cristian Aldea
       </a>
