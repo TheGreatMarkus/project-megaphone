@@ -7,27 +7,27 @@ import './top-bar.scss';
 export interface TopBarProps {}
 
 export function TopBar(props: TopBarProps) {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const options = ['Home', 'About', 'Projects', 'Contact'];
+
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [activeOption, _setActiveOption] = useState<number>(0);
   const activeOptionRef = useRef<number>(0);
-  const pageHeightRef = useRef<number>(0);
+
+  const pageRef = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState<boolean>(true);
+  const winWidth = useRef<number>(0);
 
   const setActiveOption = (value: number) => {
     activeOptionRef.current = value;
     _setActiveOption(value);
   };
 
-  const handleBurgerClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    setMenuOpen(!menuOpen);
-  };
-
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
     window.addEventListener('resize', onResize);
 
-    const pageElement = document.getElementsByClassName('section-container')[0] as HTMLDivElement;
-    pageHeightRef.current = pageElement.offsetHeight;
+    pageRef.current = document.getElementsByClassName('section-container')[0] as HTMLDivElement;
+    winWidth.current = window.innerWidth;
 
     return () => {
       window.removeEventListener('scroll', onScroll);
@@ -36,22 +36,31 @@ export function TopBar(props: TopBarProps) {
   }, []);
 
   const onResize = (event: Event) => {
-    const pageElement = document.getElementsByClassName('section-container')[0] as HTMLDivElement;
-    pageHeightRef.current = pageElement.offsetHeight;
+    if (
+      (winWidth.current >= 1024 && window.innerWidth < 1024) ||
+      (winWidth.current < 1024 && window.innerWidth >= 1024)
+    ) {
+      setAnimate(false);
+      setTimeout(() => {
+        setAnimate(true);
+      }, 50);
+    }
+
+    winWidth.current = window.innerWidth;
   };
 
   const onScroll = (event: Event) => {
     const scroll = window.scrollY;
-    const pageHeight = pageHeightRef.current;
-    const activeOption = activeOptionRef.current;
+    const height = pageRef.current.offsetHeight;
+    const active = activeOptionRef.current;
 
-    if (activeOption !== 0 && scroll < pageHeight * 0.33) {
+    if (active !== 0 && scroll < height * 0.33) {
       setActiveOption(0);
-    } else if (activeOption != 1 && scroll > pageHeight * 0.66 && scroll < pageHeight * 1.33) {
+    } else if (active != 1 && scroll > height * 0.66 && scroll < height * 1.33) {
       setActiveOption(1);
-    } else if (activeOption != 2 && scroll > pageHeight * 1.66 && scroll < pageHeight * 2.33) {
+    } else if (active != 2 && scroll > height * 1.66 && scroll < height * 2.33) {
       setActiveOption(2);
-    } else if (activeOption != 3 && scroll > pageHeight * 2.66 && scroll < pageHeight * 3.33) {
+    } else if (active != 3 && scroll > height * 2.66 && scroll < height * 3.33) {
       setActiveOption(3);
     }
   };
@@ -62,8 +71,12 @@ export function TopBar(props: TopBarProps) {
         Cristian Aldea
       </a>
 
-      <div className={`top-bar-button-group ${!menuOpen ? 'top-bar-menu-closed' : ''}`}>
-        <div className={`top-bar-slide-box position-${activeOption}`} />
+      <div
+        className={`top-bar-button-group${!menuOpen ? ' top-bar-menu-closed' : ' top-bar-menu-open'}${
+          animate ? ' animate' : ''
+        }`}
+      >
+        <div className={`top-bar-slider position-${activeOption}${animate ? ' animate' : ''}`} />
         {options.map((option, i) => {
           return (
             <TopBarButton
@@ -80,7 +93,13 @@ export function TopBar(props: TopBarProps) {
         })}
       </div>
 
-      <BurgerButton className="top-bar-burger-button" onClick={handleBurgerClick} activated={menuOpen} />
+      <BurgerButton
+        className="top-bar-burger-button"
+        onClick={() => {
+          setMenuOpen(!menuOpen);
+        }}
+        activated={menuOpen}
+      />
     </nav>
   );
 }

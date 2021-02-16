@@ -1,6 +1,7 @@
 @import '../../../../variables.scss';
 .top-bar-button-container {
   display: flex;
+  position: relative;
 
   font-size: 2rem;
   padding: 0rem 1rem;
