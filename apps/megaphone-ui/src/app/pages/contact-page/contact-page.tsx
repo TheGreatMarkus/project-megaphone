@@ -38,6 +38,7 @@ export function ContactPage(props: ContactPageProps) {
               className="contact-page-entry plain-link button-like"
               href={contact.url}
               target="_blank"
+              rel="noreferrer"
               key={i}
             >
               <contact.image className="contact-page-image" />

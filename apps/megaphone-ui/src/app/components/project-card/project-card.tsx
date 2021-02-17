@@ -13,8 +13,9 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
       className={`project-card-container plain-link button-like ${className}`}
       href={project.url}
       target="_blank"
+      rel="noreferrer"
     >
-      <img src={project.imageUrl} className="project-card-image"></img>
+      <img className="project-card-image" src={project.imageUrl} alt={project.name}></img>
       <div>
         <h1>{project.name}</h1>
         <p>{project.description}</p>
