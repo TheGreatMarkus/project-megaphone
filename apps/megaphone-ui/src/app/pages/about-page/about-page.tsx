@@ -13,8 +13,8 @@ export function AboutPage(props: AboutPageProps) {
           <img src="assets/images/profile-pic.jpeg" className="about-page-picture" alt="Cristian Aldea" />
           <p>Hello! I'm currently a last-year Software Engineering student at Concordia.</p>
           <p>
-            I enjoy working on everything software. I have pratical experience full-stack development, machine
-            learning and cloud native technologies, among other things.
+            I enjoy working on everything software. I have practical experience in full-stack development,
+            machine learning and cloud-native technologies, among other things.
           </p>
           <p>
             I love solving problems and learning new things, and I bring consistency and excellence to any

@@ -11,19 +11,20 @@ export function ProjectsPage(props: ProjectsPageProps) {
   const projects: IProject[] = [
     {
       name: 'Project Megaphone',
-      description: 'The repo where my public webapps and tools (including this website!) will be in put in.',
+      description: "I'm putting my public web apps and tools here, including the website you're on!",
       url: 'https://github.com/TheGreatMarkus/project-megaphone',
       imageUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
     },
     {
       name: 'Auto Made It',
-      description: 'Various utilities and scripts I made, made accessible to anyone on any system.',
+      description:
+        'I put various utilities and scripts I made to make them accessible to anyone, on any system.',
       url: 'https://github.com/TheGreatMarkus/auto-made-it',
       imageUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
     },
     {
       name: 'Risky Warfare',
-      description: 'A small game I developed in C++ based on the games and WarZone.',
+      description: 'A small game I developed in C++ based on the game Risk.',
       url: 'https://github.com/TheGreatMarkus/risky-warfare',
       imageUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
     },

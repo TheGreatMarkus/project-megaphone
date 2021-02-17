@@ -31,7 +31,7 @@ export function ContactPage(props: ContactPageProps) {
     <div className="section-container contact-page-container" id="contact-page">
       <div className="section-content-container">
         <div className="page-title">Contact</div>
-        <p>Here's some of the way you can reach out to me if you want.</p>
+        <p>You can reach out to me with the links below:</p>
         <div className="contact-page-entries">
           {contacts.map((contact, i) => (
             <a
