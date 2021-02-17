@@ -2,3 +2,7 @@
 .projects-page-container {
   @include background-image('../../../assets/images/keyboard.jpg');
 }
+
+.project-page-card {
+  margin-top: 1rem;
+}

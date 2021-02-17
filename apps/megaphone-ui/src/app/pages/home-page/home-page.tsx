@@ -14,11 +14,7 @@ export function HomePage(props: HomePageProps) {
             <div>I'm Cristian Aldea</div>
             <div>
               <div className="inline">I build</div>
-              <TypingText
-                messages={[' websites', ' software', ' solutions', ' what you need']}
-                loop={true}
-                className=""
-              />
+              <TypingText messages={[' websites', ' software', ' solutions', ' what you need']} loop={true} />
             </div>
           </div>
         </div>

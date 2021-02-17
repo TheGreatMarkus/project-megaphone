@@ -9,10 +9,10 @@ export interface TopBarButtonProps {
   children?: string;
 }
 
-export function TopBarButton({ active, onClick = () => {}, href, children }: TopBarButtonProps) {
+export function TopBarButton({ active, onClick = null, href, children }: TopBarButtonProps) {
   return (
     <a
-      className={`top-bar-button-container noselect ${active ? 'top-bar-button-active' : ''}`}
+      className={`top-bar-button-container plain-link noselect ${active ? 'top-bar-button-active' : ''}`}
       href={href}
       onClick={onClick}
       draggable="false"

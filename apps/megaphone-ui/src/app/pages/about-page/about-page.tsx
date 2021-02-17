@@ -10,7 +10,7 @@ export function AboutPage(props: AboutPageProps) {
       <div className="section-content-container">
         <div className="page-title">About Me</div>
         <div className="about-page-info">
-          <img src="assets/images/profile-pic.jpeg" className="about-page-picture" />
+          <img src="assets/images/profile-pic.jpeg" className="about-page-picture" alt="Cristian Aldea" />
           <p>Hello! I'm current a last-year Software Engineering Co-op student at Concordia.</p>
           <p>
             I'm interested in everything software, among other things :). I have a lot of pratical experience

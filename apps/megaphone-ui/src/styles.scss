@@ -42,8 +42,35 @@ body {
 
 // Elements
 
+a,
+button {
+  cursor: pointer;
+}
+
 a {
-  text-decoration: none;
+  color: $accent-text-color;
+
+  &.plain-link {
+    color: $main-text-color;
+    text-decoration: none;
+  }
+
+  &.button-like {
+    transition: background-color 0.3s ease-out;
+    background-color: transparentize($color: $background-color, $amount: 0.2);
+
+    &:hover {
+      background-color: lighten(transparentize($color: $background-color, $amount: 0.2), 15%);
+    }
+  }
+
+  &:hover {
+    color: $main-text-color;
+  }
+}
+
+h1 {
+  font-weight: bold;
 }
 
 p {
@@ -91,8 +118,7 @@ p {
 .section-content-container {
   // background-color: rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
-  margin: 1rem 1rem 0;
-  padding: 2rem 1rem 1rem;
+  padding: 0.2rem 1rem;
 
   border-radius: 10px;
 }
@@ -105,7 +131,8 @@ p {
 @media (min-width: $mobile-breakpoint) {
   .section-content-container {
     width: $mobile-breakpoint;
-    margin: 1rem auto 0;
+    margin: 0 auto 0;
+    padding: 1rem 1rem;
   }
   .page-title {
     font-size: 4rem;
@@ -115,6 +142,7 @@ p {
 @media (min-width: $tablet-breakpoint) {
   .section-content-container {
     width: $tablet-breakpoint;
+    padding: 2rem;
   }
   .page-title {
     font-size: 5rem;

@@ -73,18 +73,18 @@ export function TopBar(props: TopBarProps) {
 
     if (active !== 0 && scroll < height * 0.33) {
       setActiveOption(0);
-    } else if (active != 1 && scroll > height * 0.66 && scroll < height * 1.33) {
+    } else if (active !== 1 && scroll > height * 0.66 && scroll < height * 1.33) {
       setActiveOption(1);
-    } else if (active != 2 && scroll > height * 1.66 && scroll < height * 2.33) {
+    } else if (active !== 2 && scroll > height * 1.66 && scroll < height * 2.33) {
       setActiveOption(2);
-    } else if (active != 3 && scroll > height * 2.66 && scroll < height * 3.33) {
+    } else if (active !== 3 && scroll > height * 2.66 && scroll < height * 3.33) {
       setActiveOption(3);
     }
   };
 
   return (
     <nav className="top-bar-container" ref={topBarRef}>
-      <a className="top-bar-title" href="#home-page">
+      <a className="top-bar-title plain-link" href="#home-page">
         Cristian Aldea
       </a>
 

@@ -3,21 +3,21 @@ import './burger-button.scss';
 
 /* eslint-disable-next-line */
 export interface BurgerButtonProps {
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   activated: boolean;
 }
 
 export function BurgerButton({ onClick, className = '', activated }: BurgerButtonProps) {
   return (
-    <div
+    <button
       className={`hamburger-button-container ${className} ${activated ? 'hamburger-button-activated' : ''}`}
       onClick={onClick}
     >
       <div className="hamburger-button-line hamburger-button-top"></div>
       <div className="hamburger-button-line hamburger-button-middle"></div>
       <div className="hamburger-button-line hamburger-button-bottom"></div>
-    </div>
+    </button>
   );
 }
 

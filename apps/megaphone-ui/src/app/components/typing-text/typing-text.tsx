@@ -4,7 +4,7 @@ import './typing-text.scss';
 export interface TypingTextProps {
   messages: string[];
   loop: boolean;
-  className: string;
+  className?: string;
 }
 
 enum Action {
@@ -20,9 +20,9 @@ const deleteWait = 150;
 const doneDeletingPause = 1234;
 const doneTypingPause = 2134;
 
-export function TypingText({ messages, loop, className }: TypingTextProps) {
-  let [text, setText] = useState<string>('');
-  let [showCursor, setShowCursor] = useState<boolean>(true);
+export function TypingText({ messages, loop, className = '' }: TypingTextProps) {
+  const [text, setText] = useState<string>('');
+  const [showCursor, setShowCursor] = useState<boolean>(true);
   let charIndex = 0,
     phraseIndex = 0,
     pause = 0,
@@ -39,7 +39,7 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
 
   const animateTyping = async () => {
     while (repeat) {
-      let wait = animateNextStep();
+      const wait = animateNextStep();
       await sleep(wait);
     }
   };
@@ -49,8 +49,8 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
     // When actively editing the text, the cursor should not be blinking
     if (currentAction === Action.TYPING) {
       // Add char to current text
-      let tempChar = charIndex;
-      let tempPhrase = phraseIndex;
+      const tempChar = charIndex;
+      const tempPhrase = phraseIndex;
       setText((text) => text + messages[tempPhrase][tempChar]);
       setShowCursor(true);
 
@@ -115,10 +115,10 @@ export function TypingText({ messages, loop, className }: TypingTextProps) {
   };
 
   return (
-    <div className="inline typing-text-container noselect">
-      <div className={`inline ${className}`}>{text}</div>
-      <div className={`inline typing-text-cursor ${className}`}>{showCursor ? '|' : ''}</div>
-    </div>
+    <>
+      <div className={`inline typing-text-container ${className}`}>{text}</div>
+      <div className={`inline typing-text-cursor noselect${className}`}>{showCursor ? '|' : ''}</div>
+    </>
   );
 }
 

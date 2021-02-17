@@ -1,5 +1,9 @@
 @import '../../../../variables.scss';
 .hamburger-button-container {
+  background-color: transparent;
+  border-radius: 50px;
+  outline: none;
+
   padding: 5px;
   box-sizing: border-box;
   width: 3.5rem;

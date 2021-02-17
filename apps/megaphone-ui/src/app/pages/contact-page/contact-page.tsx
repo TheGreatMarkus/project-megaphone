@@ -9,7 +9,7 @@ export function ContactPage(props: ContactPageProps) {
     <div className="section-container contact-page-container" id="contact-page">
       <div className="section-content-container">
         <div className="page-title">Contact</div>
-        <div>Coming soon!</div>
+        <p>Here's some of the way you can reach out to me if you want.</p>
       </div>
     </div>
   );

@@ -19,9 +19,9 @@
 }
 
 @mixin delayed-fadein() {
-  animation: fadein 2s ease-out 1.5s backwards;
+  animation: fadein 1s ease-out 1.5s backwards;
 }
 
 @mixin instant-fadein() {
-  animation: fadein 1.5s ease-out backwards;
+  animation: fadein 1s ease-out backwards;
 }
