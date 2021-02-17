@@ -4,3 +4,30 @@
 .contact-page-container {
   @include background-image('../../../assets/images/web.jpg');
 }
+
+.contact-page-entries {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-page-entry {
+  margin: 1rem;
+  padding: 2rem;
+
+  border-radius: 50%;
+}
+
+.contact-page-image {
+  fill: $main-text-color;
+  width: 5rem;
+  height: 5rem;
+}
+
+@media (min-width: $mobile-breakpoint) {
+  .contact-page-entries {
+    flex-direction: row;
+  }
+}
