@@ -39,6 +39,7 @@ export function ContactPage(props: ContactPageProps) {
               href={contact.url}
               target="_blank"
               rel="noreferrer"
+              aria-label={contact.name}
               key={i}
             >
               <contact.image className="contact-page-image" />

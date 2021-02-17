@@ -13,6 +13,7 @@ export function BurgerButton({ onClick, className = '', activated }: BurgerButto
     <button
       className={`hamburger-button-container ${className} ${activated ? 'hamburger-button-activated' : ''}`}
       onClick={onClick}
+      aria-label="hamburger-menu"
     >
       <div className="hamburger-button-line hamburger-button-top"></div>
       <div className="hamburger-button-line hamburger-button-middle"></div>
