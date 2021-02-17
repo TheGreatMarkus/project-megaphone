@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+.project-card-container {
+  overflow: auto;
+
+  background-color: transparentize($color: $background-color, $amount: 0.2);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0.5rem;
+}
+
+.project-card-image {
+  width: 5rem;
+  height: 5rem;
+
+  margin-right: 0.5rem;
+
+  border-radius: 10px;
+}
+
+@media (min-width: $mobile-breakpoint) {
+  .project-card-image {
+    margin-right: 1rem;
+  }
+}

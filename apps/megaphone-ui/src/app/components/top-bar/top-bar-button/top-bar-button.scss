@@ -1,0 +1,20 @@
+@import '../../../../variables.scss';
+.top-bar-button-container {
+  display: flex;
+  position: relative;
+
+  font-size: 2rem;
+  padding: 0rem 1rem;
+  height: $top-bar-height;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.top-bar-button-container:hover {
+  background-color: transparentize($main-text-color, 0.9);
+}
+
+.top-bar-button-active {
+  color: $background-color !important;
+}

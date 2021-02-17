@@ -1,0 +1,55 @@
+@import '../../../mixins.scss';
+@import '../../../variables.scss';
+
+.about-page-container {
+  @include background-image('../../../assets/images/notebook.jpg');
+}
+.about-page-picture {
+  width: 12rem;
+  float: none;
+  display: inline-block;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.about-page-info {
+  text-align: center;
+}
+
+.about-page-quote {
+  text-align: center;
+  margin-top: 2rem;
+
+  font-weight: bold;
+}
+
+@media (min-width: $mobile-breakpoint) {
+  .about-page-picture {
+    width: 15rem;
+  }
+
+  .about-page-info {
+    font-size: 1.25rem;
+  }
+
+  .about-page-quote {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .about-page-picture {
+    width: 16rem;
+  }
+  .about-page-info {
+    overflow: auto;
+    display: block;
+    text-align: left;
+  }
+
+  .about-page-picture {
+    float: left;
+
+    margin-right: 1rem;
+  }
+}
