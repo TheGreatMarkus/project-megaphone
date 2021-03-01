@@ -18,6 +18,7 @@
   "projects": {
     "megaphone-ui": { "tags": [] },
     "megaphone-ui-e2e": { "tags": [], "implicitDependencies": ["megaphone-ui"] },
-    "types": { "tags": [] }
+    "types": { "tags": [] },
+    "preference-api": { "tags": [] }
   }
 }

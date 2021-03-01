@@ -8,15 +8,22 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/megaphone-ui",
             "index": "apps/megaphone-ui/src/index.html",
             "main": "apps/megaphone-ui/src/main.tsx",
             "polyfills": "apps/megaphone-ui/src/polyfills.ts",
             "tsConfig": "apps/megaphone-ui/tsconfig.app.json",
-            "assets": ["apps/megaphone-ui/src/favicon.png", "apps/megaphone-ui/src/assets"],
-            "styles": ["apps/megaphone-ui/src/styles.scss"],
+            "assets": [
+              "apps/megaphone-ui/src/favicon.png",
+              "apps/megaphone-ui/src/assets"
+            ],
+            "styles": [
+              "apps/megaphone-ui/src/styles.scss"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -35,23 +42,44 @@
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "budgets": [{ "type": "initial", "maximumWarning": "2mb", "maximumError": "5mb" }]
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": { "buildTarget": "megaphone-ui:build" },
-          "configurations": { "production": { "buildTarget": "megaphone-ui:build:production" } }
+          "options": {
+            "buildTarget": "megaphone-ui:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "megaphone-ui:build:production"
+            }
+          }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/megaphone-ui/**/*.{ts,tsx,js,jsx}"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/megaphone-ui/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/megaphone-ui"],
-          "options": { "jestConfig": "apps/megaphone-ui/jest.config.js", "passWithNoTests": true }
+          "outputs": [
+            "coverage/apps/megaphone-ui"
+          ],
+          "options": {
+            "jestConfig": "apps/megaphone-ui/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     },
@@ -67,11 +95,19 @@
             "tsConfig": "apps/megaphone-ui-e2e/tsconfig.e2e.json",
             "devServerTarget": "megaphone-ui:serve"
           },
-          "configurations": { "production": { "devServerTarget": "megaphone-ui:serve:production" } }
+          "configurations": {
+            "production": {
+              "devServerTarget": "megaphone-ui:serve:production"
+            }
+          }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/megaphone-ui-e2e/**/*.{js,ts}"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/megaphone-ui-e2e/**/*.{js,ts}"
+            ]
+          }
         }
       }
     },
@@ -82,17 +118,91 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["libs/types/**/*.ts"] }
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "preference-api": {
+      "root": "apps/preference-api",
+      "sourceRoot": "apps/preference-api/src",
+      "projectType": "application",
+      "prefix": "preference-api",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/preference-api",
+            "main": "apps/preference-api/src/main.ts",
+            "tsConfig": "apps/preference-api/tsconfig.app.json",
+            "assets": [
+              "apps/preference-api/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/preference-api/src/environments/environment.ts",
+                  "with": "apps/preference-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "preference-api:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/preference-api/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/preference-api"
+          ],
+          "options": {
+            "jestConfig": "apps/preference-api/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }
   },
-  "cli": { "defaultCollection": "@nrwl/react" },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
   "generators": {
     "@nrwl/react": {
-      "application": { "style": "scss", "linter": "eslint", "babel": true },
-      "component": { "style": "scss" },
-      "library": { "style": "scss", "linter": "eslint" }
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
     }
   },
   "defaultProject": "megaphone-ui"
