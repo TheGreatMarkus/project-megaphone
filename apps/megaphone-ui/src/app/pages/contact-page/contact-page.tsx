@@ -17,7 +17,7 @@ export function ContactPage(props: ContactPageProps) {
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/TheGreatMarkus',
+      url: 'https://github.com/cristian-aldea',
       image: GitHubSvg,
     },
     {

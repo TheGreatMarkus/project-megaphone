@@ -12,20 +12,20 @@ export function ProjectsPage(props: ProjectsPageProps) {
     {
       name: 'Project Megaphone',
       description: "I'm putting my public web apps and tools here, including the website you're on!",
-      url: 'https://github.com/TheGreatMarkus/project-megaphone',
+      url: 'https://github.com/cristian-aldea/project-megaphone',
       imageUrl: 'assets/images/github.jpg',
     },
     {
       name: 'Auto Made It',
       description:
         'I put various utilities and scripts I made to make them accessible to anyone, on any system.',
-      url: 'https://github.com/TheGreatMarkus/auto-made-it',
+      url: 'https://github.com/cristian-aldea/auto-made-it',
       imageUrl: 'assets/images/github.jpg',
     },
     {
       name: 'Risky Warfare',
       description: 'A small game I developed in C++ based on the game Risk.',
-      url: 'https://github.com/TheGreatMarkus/risky-warfare',
+      url: 'https://github.com/cristian-aldea/risky-warfare',
       imageUrl: 'assets/images/github.jpg',
     },
   ];
