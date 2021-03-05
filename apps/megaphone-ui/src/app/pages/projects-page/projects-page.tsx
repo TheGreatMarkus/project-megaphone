@@ -35,7 +35,7 @@ export function ProjectsPage(props: ProjectsPageProps) {
       <div className="section-content-container">
         <div className="page-title">Projects</div>
         <p className="projects-page-info">
-          My whole portfolio can be found on <a href="https://github.com/TheGreatMarkus">Github</a>, but here
+          My whole portfolio can be found on <a href="https://github.com/cristian-aldea">Github</a>, but here
           I've picked out a few of my favorites.
         </p>
         {projects.map((project, i) => (
